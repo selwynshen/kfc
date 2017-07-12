@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head lang="en">
+    <title>微鸟大学KFC公开课</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/unslider.css">
+    <link rel="stylesheet" type="text/css" href="css/unslider-dots.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="wrap-div">
+	<div class="banner">
+	    <ul>
+	    	<li class="video-li-wrap">
+			<video id="myVideo" playsinline webkit-playsinline poster="images/meimei.jpg" onclick="control_video();" onplay="playMyVideo();" onpause="pauseMyVideo();">
+			    <source src="images/final-mobile.mp4" type="video/mp4" />
+			 </video>
+			 <div class="play-botton paused"><img onclick="control_video();" src="images/play-botton.png"/></div>
+	    	</li>
+
+	    	<!-- controls="controls"  -->
+	        <li><img src="images/2.jpg"></li>
+	        <li><img src="images/3.jpg"></li>
+	        <li><img src="images/4.jpg"></li>
+	    </ul>
+	</div>
+</div>
+
+
+
+<div class="intro-price">
+	<div><b>KFC</b>欧美公开课</div>
+	<div><span>¥</span><b>300</b><span>/年</span></div>
+</div>
+
+<div class="menu">
+	<div class="classIntro" onclick="intro_click_scroll();"><span class="underline">课程详情</span></div>
+	<div class="classComment" onclick="comment_click_scroll();"><span>课程评价</span></div>
+
+	<!-- <div class="classIntro"><span class="underline"><a href="#classIntroDetail">课程详情</a></span></div>
+	<div class="classComment"><a href="#classCommentDetail">课程评价</a></div> -->
+</div>
+
+<div class="classIntroDetail" id="classIntroDetail">
+	<img src="images/classIntro.png"/>
+</div>
+
+<div class="classCommentDetail" id="classCommentDetail">
+	<img src="images/comments.png"/>
+</div>
+
+<a href="kfc-order.html"><div class="purchase">立即购买</div></a>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/unslider.js"></script>
+<script type="text/javascript" src="js/jquery.event.move.js"></script>
+<script type="text/javascript" src="js/jquery.event.swipe.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<script type="text/javascript">
+	var slider = $('.banner').unslider({
+	    autoplay: true,
+	    dots: true,
+	    arrows: {
+	        /*prev: '<a class="unslider-arrow prev">Previous slide</a>',
+	        next: '<a class="unslider-arrow next">Next slide</a>',*/
+	    }
+
+	});
+
+	var data = slider.data('unslider');
+	/*slider.on('unslider.change', function(event, index, slide) {
+		console.log('Slide has been changed to ' + index);
+		if(index==6){
+				  var data = slider.data('unslider');
+				  data.speed = 0;
+				  data.animate(0);
+				  data.speed = 750;
+				  $('.banner li').removeClass ('unslider-active').eq (0).addClass ('unslider-active');
+				
+			//slider.data('unslider').animate(0);					
+		}
+	});*/
+
+/*	slider.on('unslider.change', function(event, index, slide) {
+			control_video();		
+		}
+	);*/
+
+	//控制slider和视频播放
+
+	// if($("#myVideo")[0].play()){
+	// 	console.log(1);
+	// }
+	function control_video(){
+		if($(".play-botton").hasClass('paused')){
+			$("#myVideo")[0].play();
+			data.stop();
+			$(".play-botton").addClass('playing');
+			$(".play-botton").removeClass('paused');
+
+			$(".play-botton").css("display","none");
+			$("#myVideo").attr("controls","controls");
+		}else{
+			$("#myVideo")[0].pause();
+			$(".play-botton").addClass('paused');
+			$(".play-botton").removeClass('playing');
+			data.start();
+			$(".play-botton").css("display","block");
+			$("#myVideo").attr("controls","controls");
+
+		}
+	
+	}
+
+	function playMyVideo() {
+	    data.stop();
+	}
+
+	function pauseMyVideo() {
+	    data.start();
+	}
+</script>
+
+</body>
+</html>
+
+
