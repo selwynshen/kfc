@@ -220,9 +220,10 @@ a{color:white;}
 
 .play-botton{
 	position: absolute;
-	top:5.5em;
-	left: 10em;
+	top:42%;
 	color:white;
+	text-align: center;
+    width: 100%;
 }
 
 .play-botton img{

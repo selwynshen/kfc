@@ -80,17 +80,5 @@ function fixedBar(){
 
 fixedBar();
 
-//支付方式的切换
-$(".pay-methods").find(".pay-mothod").each(function(){
-	$(this).click(function(){
-		if(!$(this).hasClass('alipay')){
-			$(this).find(".choose-icon").attr("src","images/choose.png");
-			$(".alipay").find(".choose-icon").attr("src","images/nchoose.png");
-		} else{
-			$(this).find(".choose-icon").attr("src","images/choose.png");
-			$(".wechat").find(".choose-icon").attr("src","images/nchoose.png");
-		}
-	});
-});
 
 
