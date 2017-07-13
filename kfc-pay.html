@@ -43,11 +43,25 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.popup.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 
 <script type="text/javascript">
 	var options = { content : $('#content_div2') };
 	$(".pay").popup(options);
+
+
+	//支付方式的切换
+	$(".pay-methods").find(".pay-mothod").each(function(){
+		$(this).click(function(){
+			if(!$(this).hasClass('alipay')){
+				$(this).find(".choose-icon").attr("src","images/choose.png");
+				$(".alipay").find(".choose-icon").attr("src","images/nchoose.png");
+			} else{
+				$(this).find(".choose-icon").attr("src","images/choose.png");
+				$(".wechat").find(".choose-icon").attr("src","images/nchoose.png");
+			}
+		});
+	});
+
 </script>
 </body>
 </html>
