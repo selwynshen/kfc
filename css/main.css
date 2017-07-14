@@ -52,7 +52,7 @@ html {
     -ms-text-size-adjust: 100%;
     font-size: 100%;
     max-width: 100%;
-    min-width: 350px !important;
+   /*  min-width: 350px !important; */
     margin: 0 auto
 }
 
