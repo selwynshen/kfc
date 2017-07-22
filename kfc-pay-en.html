@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head lang="en">
+    <title>Your order</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no" />
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="pay-top">
+	<span>Type of course</span>
+	<span>Open Course in Freebao</span>
+
+</div>
+
+<div class="pay-top">
+	<span>Order total</span>
+	<span><b>$58</b></span>
+</div>
+
+<div class="pay-top pay-middle">
+	<span>Type of payment</span>
+</div>
+
+<div class="pay-methods">
+	<div class="alipay pay-mothod">
+		<img src="images/paypal.png"/>
+		<span>Paypal</span>
+		<img class="choose-icon" src="images/choose.png"/>
+	</div>
+	<div class="wechat pay-mothod">
+		<img src="images/wechat.png"/>
+		<span>微信钱包</span>
+		<img class="choose-icon" src="images/nchoose.png"/>
+	</div>
+</div>
+
+<a href="kfc-successful-en.html"><div class="pay">Pay</div></a>
+
+<div id="content_div2" style="display: none;border-radius:1em;">支付成功</div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.popup.min.js"></script>
+
+<script type="text/javascript">
+	/*var options = { content : $('#content_div2') };
+	$(".pay").popup(options);*/
+
+
+	//支付方式的切换
+	$(".pay-methods").find(".pay-mothod").each(function(){
+		$(this).click(function(){
+			if(!$(this).hasClass('alipay')){
+				$(this).find(".choose-icon").attr("src","images/choose.png");
+				$(".alipay").find(".choose-icon").attr("src","images/nchoose.png");
+			} else{
+				$(this).find(".choose-icon").attr("src","images/choose.png");
+				$(".wechat").find(".choose-icon").attr("src","images/nchoose.png");
+			}
+		});
+	});
+
+</script>
+</body>
+</html>
+
+
